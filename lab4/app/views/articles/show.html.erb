@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @article %>
+
+<div>
+  <%= link_to "Back to articles", articles_path %>
+  <% if user_signed_in? && (current_user.id || -1) == @article.user.id %>
+    <%= link_to "Edit this article", edit_article_path(@article) %>
+    <%= button_to "Destroy this article", @article, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+  <% end %>
+</div>

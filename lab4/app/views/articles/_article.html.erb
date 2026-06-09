@@ -1,0 +1,31 @@
+<div id="<%= dom_id article %>">
+  <div>
+    <strong>image:</strong>
+    <%= image_tag article.image, style: "height: 50px; width: 50px" if article.image.attached? %>
+  </div>
+
+  <div>
+    <strong>Title:</strong>
+    <%= article.title %>
+  </div>
+
+  <div>
+    <strong>Body:</strong>
+    <%= article.body %>
+  </div>
+
+  <div>
+    <strong>User:</strong>
+    <%= article.user.email %>
+  </div>
+
+  <div>
+    <strong>Reports count:</strong>
+    <%= article.reports_count || 0 %>
+  </div>
+
+  <div>
+    <strong>Is Archived:</strong>
+    <%= article.archived ? "yes" : "no" %>
+  </div>
+</div>
